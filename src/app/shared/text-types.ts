@@ -5,5 +5,5 @@ export interface TextTypes{
   warning3: String;
   confirm: String;
   reject: String;
-
+  cardText: String;
 }

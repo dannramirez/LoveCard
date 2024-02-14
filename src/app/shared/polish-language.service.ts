@@ -11,6 +11,7 @@ export class PolishLanguageService {
     warning2: 'Naprawde nie chcesz? \u{1F62D}',
     warning3: 'Teraz to mi przykro',
     confirm: 'Tak',
-    reject: 'Nie'
+    reject: 'Nie',
+    cardText: 'Kocham cię i dziękuje że jesteś'
   }
 }

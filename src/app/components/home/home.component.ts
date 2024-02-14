@@ -14,6 +14,7 @@ const fadeInOut = trigger('fadeInOut', [
   transition('* => close', animate('1s ease')),
   transition(':enter', [style({opacity: 0}), animate('2s ease-out')])
 ])
+
 const buttonAnimation = trigger('buttonAnimation', [
   state('run_away', style({
     transform: 'translate({{ x }}px, {{ y }}px)',
