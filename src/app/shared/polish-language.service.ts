@@ -6,7 +6,7 @@ import {TextTypes} from "./text-types";
 })
 export class PolishLanguageService {
   texts: TextTypes = {
-    question: 'Zostaniesz moją walentnyką?',
+    question: 'Zostaniesz moją walentynką?',
     warning: 'Żartujesz sobie?',
     warning2: 'Naprawde nie chcesz? \u{1F62D}',
     warning3: 'Teraz to mi przykro',
