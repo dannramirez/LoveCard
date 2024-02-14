@@ -8,11 +8,11 @@ export class EnglishLanguageService {
 
   texts: TextTypes = {
     question: 'You will be my Valentine??',
-    warning: 'Are you kidding me?',
-    warning2: 'You really don\'t want to? \u{1F62D}',
-    warning3: 'Now I\'m sorry.',
-    confirm: 'Yes',
+    warning: 'Estas bromeando?',
+    warning2: 'Realmente no quieres? \u{1F62D}',
+    warning3: 'Quizas es el boton incorrecto',
+    confirm: 'Si',
     reject: 'No',
-    cardText: 'I love you'
+    cardText: 'Love U! Nat'
   }
 }
