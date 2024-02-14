@@ -1,1 +1,24 @@
-<p>home works!</p>
+<div class="main-view" [@fadeInOut]="showView ? '':'close'" (@fadeInOut.done)="changePage($event)">
+  <div class="question">
+    {{ texts?.question }}
+  </div>
+  <div class="warning" *ngIf="rejectCounter >= 2">
+    {{ texts?.warning }}
+  </div>
+  <div class="warning" *ngIf="rejectCounter > 4">
+    {{ texts?.warning2 }}
+  </div>
+  <div class="warning" *ngIf="rejectCounter > 6">
+    {{ texts?.warning3 }}
+  </div>
+
+  <div>
+    <p-button class="btn-confirm" label="{{texts?.confirm}}" [rounded]="true" size="large"
+              (onClick)="showView = !showView"></p-button>
+
+    <p-button [@buttonAnimation]=" { value: runawayButtonClass, params: { x: buttonPositionX, y: buttonPositionY}}"
+      class="{{runawayButtonClass}}" label="{{texts?.reject}}" severity="danger" [rounded]="true" size="large"
+      (mouseenter)="runaway($event)"></p-button>
+  </div>
+</div>
+
