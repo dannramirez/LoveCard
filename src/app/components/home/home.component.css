@@ -1,24 +1,46 @@
-.main-view{
+.main-view {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 98vh;
+  height: 93vh;
 }
 
-.question{
+.question {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
-.warning{
+
+.warning {
   font-size: 1.6rem;
   margin-bottom: 1rem;
 }
-.btn-confirm{
+
+.btn-confirm {
   margin-right: 1rem;
 }
 
-.run_away{
+.run_away {
   position: absolute;
   transition: transform 0.5s ease;
+}
+
+.change-lang {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+}
+
+
+p-inputSwitch {
+  margin: 0.5rem;
+}
+
+:host ::ng-deep.p-inputswitch .p-inputswitch-slider {
+  background: #f472b6;
+}
+
+:host ::ng-deep .p-inputswitch .p-inputswitch-slider:before {
+  background: #030712;
 }

@@ -5,6 +5,9 @@ import {PolishLanguageService} from "../../shared/polish-language.service";
 import {TextTypes} from "../../shared/text-types";
 import {Router} from "@angular/router";
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {InputSwitchModule} from "primeng/inputswitch";
+import {EnglishLanguageService} from "../../shared/english-language.service";
+import {FormsModule} from "@angular/forms";
 
 
 const fadeInOut = trigger('fadeInOut', [
@@ -28,7 +31,9 @@ const buttonAnimation = trigger('buttonAnimation', [
   standalone: true,
   imports: [
     CommonModule,
-    ButtonModule
+    ButtonModule,
+    InputSwitchModule,
+    FormsModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
@@ -49,10 +54,10 @@ export class HomeComponent implements OnInit {
   showView = true;
 
   ngOnInit() {
-    this.texts = this.pl_lang.texts
+    this.texts = this.eng_lang.texts
   }
 
-  constructor(readonly pl_lang: PolishLanguageService, private router: Router) {
+  constructor(readonly pl_lang: PolishLanguageService, readonly eng_lang:EnglishLanguageService, private router: Router) {
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight;
     this.rejectCounter = 0;
@@ -93,7 +98,15 @@ export class HomeComponent implements OnInit {
 
   changePage(event: any) {
     if(event.fromState==="" && event.toState==="close"){
-      this.router.navigateByUrl('/heart')
+      this.router.navigateByUrl('/heart',{state: {lang: this.texts}})
+    }
+  }
+
+  changeLang(){
+    if(this.texts === this.eng_lang.texts){
+      this.texts = this.pl_lang.texts
+    }else {
+      this.texts = this.eng_lang.texts
     }
   }
 }

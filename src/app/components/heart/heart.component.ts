@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {PolishLanguageService} from "../../shared/polish-language.service";
 import {TextTypes} from "../../shared/text-types";
 import {animate, style, transition, trigger} from "@angular/animations";
 
@@ -18,9 +17,7 @@ const fadeIn = trigger('fadeIn', [
 export class HeartComponent {
 
   texts: TextTypes;
-  constructor(readonly pl_lang: PolishLanguageService) {
-    this.texts = this.pl_lang.texts
+  constructor() {
+    this.texts = history.state.lang
   }
-
-
 }

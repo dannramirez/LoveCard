@@ -1,4 +1,11 @@
-<div class="main-view" [@fadeInOut]="showView ? '':'close'" (@fadeInOut.done)="changePage($event)">
+<div [@fadeInOut]="showView ? '':'close'" (@fadeInOut.done)="changePage($event)">
+  <div class="change-lang">
+    ENG
+    <p-inputSwitch class="switch" (onChange)="changeLang()"></p-inputSwitch>
+    PL
+  </div>
+
+<div class="main-view">
   <div class="question">
     {{ texts?.question }}
   </div>
@@ -17,8 +24,9 @@
               (onClick)="showView = !showView"></p-button>
 
     <p-button [@buttonAnimation]=" { value: runawayButtonClass, params: { x: buttonPositionX, y: buttonPositionY}}"
-      class="{{runawayButtonClass}}" label="{{texts?.reject}}" severity="danger" [rounded]="true" size="large"
-      (mouseenter)="runaway($event)"></p-button>
+              class="{{runawayButtonClass}}" label="{{texts?.reject}}" severity="danger" [rounded]="true" size="large"
+              (mouseenter)="runaway($event)"></p-button>
   </div>
 </div>
 
+</div>
